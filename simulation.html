@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QryptoTalk - BB84 Simulation</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/simulation.css">
+</head>
+<body>
+    <header class="simulation-header">
+        <nav class="navbar">
+            <a href="index.html" class="back-btn">← Back to Main</a>
+            <div class="logo">BB84 Quantum Key Distribution</div>
+            <div class="simulation-controls">
+                <button id="reset-btn" class="btn-secondary">Reset</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="simulation-container">
+        <div class="protocol-explanation">
+            <h2>BB84 Protocol Simulation</h2>
+            <p>Follow the steps to see how quantum key distribution works. Toggle Eve's interception to see how eavesdropping affects the results.</p>
+        </div>
+
+        <div class="simulation-area">
+            <div class="character alice">
+                <div class="avatar">👩🔬</div>
+                <h3>Alice</h3>
+                <div class="bits-container">
+                    <h4>Original Bits</h4>
+                    <div id="alice-bits" class="bits"></div>
+                </div>
+                <div class="bases-container">
+                    <h4>Bases</h4>
+                    <div id="alice-bases" class="bases"></div>
+                </div>
+            </div>
+
+            <div class="transmission-line">
+                <div id="photons" class="photons"></div>
+                <div id="eve" class="eve hidden">
+                    <div class="eve-icon">👁️</div>
+                    <div class="eve-label">Eve intercepting</div>
+                </div>
+            </div>
+
+            <div class="character bob">
+                <div class="avatar">👨🔬</div>
+                <h3>Bob</h3>
+                <div class="bases-container">
+                    <h4>Measurement Bases</h4>
+                    <div id="bob-bases" class="bases"></div>
+                </div>
+                <div class="bits-container">
+                    <h4>Results</h4>
+                    <div id="bob-results" class="bits"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="simulation-control-panel">
+            <div class="control-group">
+                <button id="step1-btn" class="step-btn active">1. Alice Prepares</button>
+                <button id="step2-btn" class="step-btn">2. Bob Measures</button>
+                <button id="step3-btn" class="step-btn">3. Compare Bases</button>
+            </div>
+            <div class="control-group">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="eve-toggle">
+                    <span class="slider"></span>
+                    <span class="label">Eve's Interception</span>
+                </label>
+            </div>
+        </div>
+
+        <div id="results" class="results-panel hidden">
+            <h3>Key Establishment Results</h3>
+            <div class="results-grid">
+                <div class="result-box">
+                    <h4>Matching Bases</h4>
+                    <div id="matching-bases" class="matching-bases"></div>
+                </div>
+                <div class="result-box">
+                    <h4>Final Secure Key</h4>
+                    <div id="final-key" class="final-key"></div>
+                </div>
+            </div>
+            <div id="eve-result" class="eve-result hidden"></div>
+        </div>
+
+        <div class="simulation-instructions">
+            <h3>How to Use This Simulation</h3>
+            <ol>
+                <li>Click through each step to see the protocol in action</li>
+                <li>Toggle Eve's interception to see how eavesdropping affects the results</li>
+                <li>Compare the final keys to understand how QKD detects eavesdroppers</li>
+            </ol>
+        </div>
+    </main>
+    
+
+    <script src="js/simulation.js"></script>
+</body>
+</html>

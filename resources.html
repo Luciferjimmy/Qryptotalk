@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QryptoTalk - Quantum Key Exchange Explained</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="css/resources.css">
+</head>
+<body>
+    <div class="hero-background"></div>
+    
+    <header class="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-text">QryptoTalk</span>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="simulation.html" class="nav-link active">Simulation</a>
+                    <a href="about.html" class="nav-link active">About</a>
+                </div>
+                <a href="simulation.html" class="cta-button">Try Simulation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="title-gradient">Quantum Key Exchange</span><br>
+                        Explained in Detail
+                    </h1>
+                    <p class="hero-subtitle">Understand every step of the BB84 protocol, from key generation to secure message transmission, and how we detect eavesdroppers.</p>
+                </div>
+                <div class="hero-visual">
+                    <div class="quantum-particle"></div>
+                    <div class="quantum-particle"></div>
+                    <div class="quantum-particle"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">The Complete BB84 Protocol Process</h2>
+                <p class="section-subtitle">How quantum mechanics enables perfectly secure communication</p>
+                
+                <div class="process-timeline">
+                    <!-- Step 1 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <h3>Alice Generates Random Bits & Bases</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="alice-visual">
+                                    <div class="visual-label">Alice</div>
+                                    <div class="bits-container">
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-1">1</div>
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-1">1</div>
+                                    </div>
+                                    <div class="bases-container">
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>Alice starts by generating:</p>
+                                <ul>
+                                    <li>A random sequence of bits (0s and 1s)</li>
+                                    <li>A random sequence of bases (+ or ×) for each bit</li>
+                                </ul>
+                                <p>She encodes each bit in the corresponding quantum basis:</p>
+                                <ul>
+                                    <li><strong>+ basis</strong>: 0 → |0⟩, 1 → |1⟩</li>
+                                    <li><strong>× basis</strong>: 0 → |+⟩, 1 → |-⟩</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <h3>Quantum Transmission to Bob</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="transmission-visual">
+                                    <div class="alice-node">
+                                        <div class="node-icon">👩🔬</div>
+                                    </div>
+                                    <div class="quantum-channel">
+                                        <div class="photon photon-plus-0"></div>
+                                        <div class="photon photon-cross-1"></div>
+                                        <div class="photon photon-plus-0"></div>
+                                        <div class="photon photon-cross-1"></div>
+                                    </div>
+                                    <div class="bob-node">
+                                        <div class="node-icon">👨🔬</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>Alice sends the encoded quantum states to Bob through a quantum channel (typically photons in optical fiber):</p>
+                                <ul>
+                                    <li>Each quantum state is fragile - any measurement will disturb it</li>
+                                    <li>The transmission is one-way (Alice→Bob)</li>
+                                    <li>Quantum no-cloning theorem prevents perfect copying</li>
+                                </ul>
+                                <div class="eve-intercept hidden">
+                                    <div class="eve-icon">👁️</div>
+                                    <p>Eve tries to intercept and measure the photons!</p>
+                                </div>
+                                <button class="toggle-eve">Show Eve's Interception</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">3</div>
+                            <h3>Bob Measures with Random Bases</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="bob-visual">
+                                    <div class="visual-label">Bob</div>
+                                    <div class="bases-container">
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                        <div class="basis basis-plus">+</div>
+                                    </div>
+                                    <div class="results-container">
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-1">1</div>
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-1">1</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>Bob measures each quantum state using randomly chosen bases:</p>
+                                <ul>
+                                    <li>When basis matches Alice's: Correct bit result</li>
+                                    <li>When basis doesn't match: Random 50/50 result</li>
+                                </ul>
+                                <p>Example outcomes:</p>
+                                <div class="outcome-grid">
+                                    <div class="outcome-header">Alice's</div>
+                                    <div class="outcome-header">Bob's</div>
+                                    <div class="outcome-header">Result</div>
+                                    
+                                    <div class="outcome-cell">|0⟩ (+)</div>
+                                    <div class="outcome-cell">+</div>
+                                    <div class="outcome-cell correct">0 (correct)</div>
+                                    
+                                    <div class="outcome-cell">|1⟩ (+)</div>
+                                    <div class="outcome-cell">×</div>
+                                    <div class="outcome-cell random">0 or 1 (random)</div>
+                                    
+                                    <div class="outcome-cell">|+⟩ (×)</div>
+                                    <div class="outcome-cell">×</div>
+                                    <div class="outcome-cell correct">0 (correct)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">4</div>
+                            <h3>Basis Comparison & Key Establishment</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="comparison-visual">
+                                    <div class="alice-bases">
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                    </div>
+                                    <div class="compare-icon">⇄</div>
+                                    <div class="bob-bases">
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-plus">+</div>
+                                        <div class="basis basis-cross">×</div>
+                                        <div class="basis basis-plus">+</div>
+                                    </div>
+                                    <div class="matching-bases">
+                                        <div class="matching-base">1</div>
+                                        <div class="matching-base">3</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>Alice and Bob publicly compare their bases (not the bits!):</p>
+                                <ul>
+                                    <li>They discard all bits where bases didn't match</li>
+                                    <li>The remaining bits form the raw key</li>
+                                    <li>About 50% of bits are typically kept</li>
+                                </ul>
+                                <p>Example with 4 qubits:</p>
+                                <div class="key-example">
+                                    <p>Alice's bases: + × + ×</p>
+                                    <p>Bob's bases: + + × +</p>
+                                    <p>Matching positions: 1, 3 → Keep these bits</p>
+                                </div>
+                                <div class="eve-warning hidden">
+                                    <div class="warning-icon">⚠️</div>
+                                    <p>If Eve intercepted, some matching bits will disagree due to her measurements!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">5</div>
+                            <h3>Eavesdropping Detection</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="detection-visual">
+                                    <div class="alice-sample">
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-1">1</div>
+                                    </div>
+                                    <div class="compare-icon">⇄</div>
+                                    <div class="bob-sample">
+                                        <div class="bit bit-0">0</div>
+                                        <div class="bit bit-0">0</div>
+                                    </div>
+                                    <div class="eve-detected">
+                                        <div class="icon">🚨</div>
+                                        <div class="text">Eve Detected!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>To detect eavesdropping:</p>
+                                <ul>
+                                    <li>Alice and Bob sacrifice some key bits by comparing them publicly</li>
+                                    <li>If any bits disagree, Eve must have measured them</li>
+                                    <li>No errors means either no Eve or she guessed all bases correctly</li>
+                                </ul>
+                                <p>Security comes from:</p>
+                                <ul>
+                                    <li>Quantum uncertainty - Eve can't clone states</li>
+                                    <li>Randomness - Eve can't predict which bases to use</li>
+                                    <li>Error detection - Any interference leaves traces</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="process-step">
+                        <div class="step-header">
+                            <div class="step-number">6</div>
+                            <h3>Secure Message Transmission</h3>
+                        </div>
+                        <div class="step-content">
+                            <div class="step-visual">
+                                <div class="message-visual">
+                                    <div class="alice-message">
+                                        <div class="message-label">Hello Bob!</div>
+                                        <div class="xor-operation">⊕</div>
+                                        <div class="secret-key">
+                                            <div class="key-bit">1</div>
+                                            <div class="key-bit">0</div>
+                                            <div class="key-bit">1</div>
+                                            <div class="key-bit">1</div>
+                                        </div>
+                                        <div class="equals">=</div>
+                                        <div class="encrypted-message">
+                                            <div class="encrypted-bit">1</div>
+                                            <div class="encrypted-bit">0</div>
+                                            <div class="encrypted-bit">0</div>
+                                            <div class="encrypted-bit">0</div>
+                                        </div>
+                                    </div>
+                                    <div class="transmission-arrow">↓</div>
+                                    <div class="bob-decrypts">
+                                        <div class="encrypted-message">
+                                            <div class="encrypted-bit">1</div>
+                                            <div class="encrypted-bit">0</div>
+                                            <div class="encrypted-bit">0</div>
+                                            <div class="encrypted-bit">0</div>
+                                        </div>
+                                        <div class="xor-operation">⊕</div>
+                                        <div class="secret-key">
+                                            <div class="key-bit">1</div>
+                                            <div class="key-bit">0</div>
+                                            <div class="key-bit">1</div>
+                                            <div class="key-bit">1</div>
+                                        </div>
+                                        <div class="equals">=</div>
+                                        <div class="message-label">Hello Bob!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-description">
+                                <p>With a verified secure key, Alice and Bob can communicate:</p>
+                                <ul>
+                                    <li><strong>One-Time Pad (XOR)</strong>: Perfect secrecy when key length ≥ message length</li>
+                                    <li><strong>AES Encryption</strong>: For longer messages with key expansion</li>
+                                </ul>
+                                <p>XOR Example:</p>
+                                <pre>Message:  H    e    l    l    o
+ASCII:   01001000 01100101 01101100 01101100 01101111
+Key:     01011010 10100101 11010011 00101101 10011010
+---------------------------------------------------- XOR
+Cipher:  00010010 11000000 10111111 01000001 11110101</pre>
+                                <p>Only with the exact same key can Bob decrypt the message.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about quantum key distribution</p>
+                
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <h3>Why can't Eve copy the quantum states?</h3>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Due to the quantum no-cloning theorem, it's impossible to create an exact copy of an unknown quantum state. Any attempt by Eve to measure the states will disturb them, revealing her presence when Alice and Bob compare their results.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <h3>What happens if Eve intercepts but guesses all bases correctly?</h3>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If Eve happens to guess all measurement bases correctly (which becomes exponentially unlikely as the key length increases), she could intercept without detection. However, the probability is negligible for practical key lengths (e.g., 1 in 2^100 for 100 bits).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <h3>How is this different from classical encryption?</h3>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Classical encryption (like RSA) relies on computational hardness assumptions that could be broken by quantum computers. QKD's security is based on fundamental physics laws that can't be broken by any computational power.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-card">
+                        <div class="faq-question">
+                            <h3>What practical applications does QKD have?</h3>
+                            <div class="faq-toggle">+</div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>QKD is used for ultra-secure communications in government, military, financial sectors, and any scenario requiring long-term security. Current implementations can work over 100+ km of optical fiber or through free-space satellite links.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Ready to See It in Action?</h2>
+                    <p>Experience quantum key distribution firsthand with our interactive simulation.</p>
+                    <a href="simulation.html" class="primary-button glow-on-hover">Launch BB84 Simulation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-text">QryptoTalk</span>
+                    </div>
+                    <p class="footer-tagline">Making quantum security understandable for everyone</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Resources</h4>
+                        <a href="assets/QryptoTalk_ An Interactive Exploration of Quantum Key Distribution.pdf">Documentation</a>
+                        <a href="assets/Final_Quantum_Paper_IJHSR.docx">Research Papers</a>
+                        <a href="resources.html">Resources & Details</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 QryptoTalk. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon">🐦</a>
+                    <a href="#" class="social-icon">📘</a>
+                    <a href="#" class="social-icon">💼</a>
+                    <a href="#" class="social-icon">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/resources.js"></script>
+</body>
+</html>

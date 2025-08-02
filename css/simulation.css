@@ -1,0 +1,391 @@
+/* Simulation Specific Styles */
+.simulation-header {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: white;
+    padding-bottom: 20px;
+}
+
+.simulation-header .navbar {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.simulation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.protocol-explanation {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.simulation-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.character {
+    width: 250px;
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.bits-container, .bases-container {
+    margin: 15px 0;
+}
+
+.bits, .bases {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.bit, .basis {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.bit-0 { background: #fee2e2; color: #b91c1c; }
+.bit-1 { background: #dbeafe; color: #1d4ed8; }
+.basis-plus { background: #dcfce7; color: #15803d; }
+.basis-cross { background: #fef3c7; color: #b45309; }
+
+.transmission-line {
+    flex: 1;
+    height: 2px;
+    background: #cbd5e1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.photons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.photon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.photon-plus-0 { background: #ef4444; }
+.photon-plus-1 { background: #3b82f6; }
+.photon-cross-0 { background: #f59e0b; }
+.photon-cross-1 { background: #8b5cf6; }
+
+.eve {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.eve-icon {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.eve-label {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.simulation-control-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.step-btn {
+    padding: 10px 15px;
+    border: none;
+    background: #e2e8f0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.step-btn.active {
+    background: #4f46e5;
+    color: white;
+}
+
+.step-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: relative;
+    cursor: pointer;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ef4444;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.results-panel {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.result-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.matching-bases, .final-key {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.matching-base, .key-bit {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.matching-base {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.key-bit {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.eve-result {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.eve-detected {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.eve-not-detected {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.simulation-instructions {
+    background: #f1f5f9;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 40px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes photonMove {
+    0% { transform: translateX(0) scale(1); opacity: 1; }
+    100% { transform: translateX(100%) scale(0.8); opacity: 0.8; }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.photon {
+    animation: photonMove 1.5s linear infinite;
+    opacity: 0;
+}
+
+.photon:nth-child(1) { animation-delay: 0.1s; }
+.photon:nth-child(2) { animation-delay: 0.3s; }
+.photon:nth-child(3) { animation-delay: 0.5s; }
+.photon:nth-child(4) { animation-delay: 0.7s; }
+.photon:nth-child(5) { animation-delay: 0.9s; }
+.photon:nth-child(6) { animation-delay: 1.1s; }
+.photon:nth-child(7) { animation-delay: 1.3s; }
+.photon:nth-child(8) { animation-delay: 1.5s; }
+
+.character.active {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.eve-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    animation: pulse 0.5s ease-out;
+}
+
+.results-panel {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.error-shake {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .simulation-area {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .transmission-line {
+        width: 2px;
+        height: 100px;
+        margin: 20px 0;
+    }
+    
+    .photons {
+        flex-direction: column;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .simulation-control-panel {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .character {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .photon {
+        animation: photonMove 1s linear infinite;
+    }
+}
+.eve-result .small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
